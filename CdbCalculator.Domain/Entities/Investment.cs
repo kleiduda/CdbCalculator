@@ -19,11 +19,11 @@ public class Investment
     public double Yield { get; private set; }
     public double TaxValue { get; private set; }
 
-    public double NetFinalValue => Math.Round(GrossFinalValue - TaxValue, 2);
+    public double NetFinalValue => GrossFinalValue - TaxValue;
 
     public Investment(double initialValue, int periodInMonths)
     {
-        InitialValue = Math.Round(initialValue, 2);
+        InitialValue = initialValue;
         PeriodInMonths = periodInMonths;
     }
 
@@ -35,11 +35,12 @@ public class Investment
         for (int i = 0; i < PeriodInMonths; i++)
         {
             GrossFinalValue *= monthlyMultiplier;
-            GrossFinalValue = Math.Round(GrossFinalValue, 2);
+            //GrossFinalValue = Math.Round(GrossFinalValue, 2);
+            //GrossFinalValue = GrossFinalValue;
         }
 
-        Yield = Math.Round(GrossFinalValue - InitialValue, 2);
-        TaxValue = Math.Round(GetTaxValue(), 2);
+        Yield = GrossFinalValue - InitialValue;
+        TaxValue = GetTaxValue();
     }
     private double GetTaxValue()
     {
