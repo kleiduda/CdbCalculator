@@ -1,5 +1,6 @@
 ﻿using CdbCalculator.Application;
 using CdbCalculator.Application.Arguments;
+using CdbCalculator.Application.interfaces;
 using CdbCalculator.Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,9 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 [ApiController]
 public class InvestmentController : ControllerBase
 {
-    private readonly InvestmentService _investmentService;
+    private readonly IInvestmentService _investmentService;
 
-    public InvestmentController(InvestmentService investmentService)
+    public InvestmentController(IInvestmentService investmentService)
     {
         _investmentService = investmentService;
     }

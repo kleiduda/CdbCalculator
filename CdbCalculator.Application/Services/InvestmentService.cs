@@ -1,8 +1,9 @@
 ﻿using CdbCalculator.Application.Arguments;
+using CdbCalculator.Application.interfaces;
 using CdbCalculator.Domain.Entities;
 
 namespace CdbCalculator.Application.Services;
-public class InvestmentService
+public class InvestmentService : IInvestmentService
 {
     public ServiceResult<InvestmentResponse> Calculate(InvestmentRequest request)
     {

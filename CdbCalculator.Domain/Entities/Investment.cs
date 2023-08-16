@@ -35,8 +35,6 @@ public class Investment
         for (int i = 0; i < PeriodInMonths; i++)
         {
             GrossFinalValue *= monthlyMultiplier;
-            //GrossFinalValue = Math.Round(GrossFinalValue, 2);
-            //GrossFinalValue = GrossFinalValue;
         }
 
         Yield = GrossFinalValue - InitialValue;
@@ -47,16 +45,4 @@ public class Investment
         return _taxStrategy.CalculateTax(Yield);
     }
     
-    //metodo sem o uso do padrao strategy, mantive aqui para mostrar como o padrao de strategy ajuda com Principio SOLID "open closed"
-    //private double GetTaxValue()
-    //{
-    //    double taxRate = 0;
-
-    //    if (PeriodInMonths <= 6) taxRate = 0.225;
-    //    else if (PeriodInMonths <= 12) taxRate = 0.20;
-    //    else if (PeriodInMonths <= 24) taxRate = 0.175;
-    //    else taxRate = 0.15;
-
-    //    return Rendimento * taxRate;
-    //}
 }
