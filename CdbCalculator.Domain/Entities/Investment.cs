@@ -21,12 +21,6 @@ public class Investment
 
     public double NetFinalValue => GrossFinalValue - TaxValue;
 
-    public Investment(double initialValue, int periodInMonths)
-    {
-        InitialValue = initialValue;
-        PeriodInMonths = periodInMonths;
-    }
-
     public void Calculate()
     {
         double monthlyMultiplier = 1 + (0.009 * 1.08); // 0.9% CDI and 108% TB

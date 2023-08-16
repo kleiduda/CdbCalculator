@@ -1,3 +1,4 @@
+using CdbCalculator.Application.interfaces;
 using CdbCalculator.Application.Services;
 using CdbCalculator.Domain.Strategy;
 using System.Text.Json;
@@ -27,8 +28,7 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddTransient<InvestmentService>();
-builder.Services.AddTransient<ITaxStrategy, ShortTermTaxStrategy>();
+builder.Services.AddScoped<IInvestmentService, InvestmentService>();
 
 var app = builder.Build();
 
