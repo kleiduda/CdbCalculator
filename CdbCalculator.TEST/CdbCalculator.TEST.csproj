@@ -22,4 +22,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CdbCalculator.Application\CdbCalculator.Application.csproj" />
+    <ProjectReference Include="..\CdbCalculator.Domain\CdbCalculator.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
